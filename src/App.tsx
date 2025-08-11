@@ -1,9 +1,11 @@
+import Lesson_06 from "./lessons/Laesson_06/Laesson_06";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
-      <p> My first TS components</p>
+      <Lesson_06 />
     </div>
   );
 }
