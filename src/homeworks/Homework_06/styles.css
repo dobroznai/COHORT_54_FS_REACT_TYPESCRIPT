@@ -1,0 +1,50 @@
+.homework_06_page_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  padding: 80px;
+}
+
+.list_wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 800px;
+  padding: 40px;
+  align-items: center;
+  gap: 40px;
+  background-color: aliceblue;
+}
+
+.list_title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+}
+
+.cars_list {
+  display: flex;
+  gap: 25px;
+}
+
+.car_card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.car_brand {
+  margin: 0;
+  text-align: center;
+  color: #0077cc;
+}
+
+.car_price,
+.car_fuel {
+  margin: 5px 0;
+  color: black;
+}
