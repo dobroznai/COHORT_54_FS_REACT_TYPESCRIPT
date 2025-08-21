@@ -35,6 +35,7 @@
   border-radius: 4px;
 
   gap: 15px;
+  cursor: pointer;
 }
 .card_wrapper:hover {
   background: linear-gradient(45deg, #d8b5ff, #1eae98);
