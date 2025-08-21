@@ -1,0 +1,49 @@
+.homework_06_page_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #2e3192, #1bffff);
+  padding: 80px;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.card_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(to right, #02aabd, #00cdac);
+  transition: background 500ms ease-in-out;
+
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: font-size 1sec, color 1sec;
+
+  width: 300px;
+  min-height: 300px;
+  max-height: fit-content;
+  transition: width 3sec, min-height 6sec;
+
+  border: 2px solid black;
+  border-radius: 4px;
+
+  gap: 15px;
+}
+.card_wrapper:hover {
+  background: linear-gradient(45deg, #d8b5ff, #1eae98);
+  width: 400px;
+  min-height: 400px;
+  font-size: 25px;
+  color: white;
+}
+
+.car_info_brand {
+  font-size: 24px;
+  color: rgb(49, 49, 49);
+}
