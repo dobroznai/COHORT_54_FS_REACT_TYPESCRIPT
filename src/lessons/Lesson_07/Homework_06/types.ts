@@ -1,9 +1,3 @@
-export interface Car {
-  brand: string;
-  price: number;
-  isDiesel: boolean;
-}
-
 export enum CAR_BRAND {
   BMW = "BMW",
   Mercedes = "Mercedes",
@@ -11,3 +5,16 @@ export enum CAR_BRAND {
   Nissan = "Nissan",
   Audi = "Audi",
 }
+
+export interface Vehicle<TFuel> {
+  brand: CAR_BRAND;
+  price: number;
+  fuel: TFuel;
+}
+
+export enum FUEL_TYPE {
+  DIESEL = "Diesel",
+  BENZIN = "Benzin",
+}
+
+export type Car = Vehicle<FUEL_TYPE>;

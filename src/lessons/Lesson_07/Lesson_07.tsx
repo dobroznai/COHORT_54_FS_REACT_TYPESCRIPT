@@ -51,19 +51,56 @@ function Lesson_07() {
   const weather = decode(WEATHER_CODES.DS);
   console.log(weather);
 
-  // // 13. Generic
-  // type ArrayGenerator = ValueType[];
+  // 13. Generic
 
-  // const someStringsArray: ArrayGenerator = ["a", "b", "c"];
-  // const someNumbersArray: ArrayGenerator = [1, 2, 3, 4, 5];
-  // const someBooleansArray: ArrayGenerator = [true, false, true];
+  type ArrayGenerator<ValueType> = ValueType[];
 
-  // // Generic with objects
+  const someStringsArray: ArrayGenerator<string> = ["a", "b", "c"];
+  const someNumberArray: ArrayGenerator<number> = [1, 2, 3, 4, 5];
+  const someBooleansArray: ArrayGenerator<boolean> = [true, false, true];
 
-  // interface AppleType {
-  // model: string;
-  // articul: number;
-  // }
+  // Generic with objects
+
+  interface AppleType {
+    model: string;
+    article: number;
+  }
+  // Це літеральний тип.
+  //Він каже: змінна може бути тільки "TV" або "PC".
+  type ItemType = "TV" | "PC";
+
+  //	•	T extends ItemType = ItemType → означає, що type має бути або "TV", або "PC".
+  //	•	extends ItemType → обмеження, щоб T не був довільним рядком.
+  //	•	= ItemType → значення за замовчуванням (якщо не передати другий generic).
+  interface ShopItem<ValueType, T extends ItemType = ItemType> {
+    type: T;
+    value: ValueType;
+  }
+
+  //   interface ShopItems<ValueType> {
+  //     type: string;
+  //     value: ValueType;
+  //   }
+
+  const item1: ShopItem<number, "TV"> = {
+    type: "TV",
+    value: 1234567890,
+  };
+
+  const item2: ShopItem<string, "PC"> = {
+    type: "PC",
+    value: "XIAOMI Model 123",
+  };
+
+  const item3: ShopItem<AppleType, "PC"> = {
+    type: "PC",
+    value: {
+      model: "apple pro",
+      article: 123456789,
+    },
+  };
+
+  console.log(item1, item2, item3);
 
   // interface ShopItems
   // type: string;
