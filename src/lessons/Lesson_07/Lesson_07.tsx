@@ -1,13 +1,17 @@
 import "./styles.css";
+
 import { WEATHER_CODES } from "./types";
-// import { type ReactNode } from "react";
+import Button from "components/Button/Button";
+import Input from "components/Input/Input";
+import Counter from "components/Counter/Counter";
+import { useState } from "react";
 
 // !! Есть 2 основных способа вызова перерендера(обновления) компонента:
 // 1 - изменения state(посредством вызова функции setState())
 // 2 - изменение props
 
 function Lesson_07() {
-  // 12. enum
+  // 12. enum - decode weather code
   // Создайте функцию, которая бы принимала следующие параметры:
   // код погоды и функция decode, которая дает расшифровку погоды по коду.
   // Функция должна возвращать строку, описывающую погоду. Таблица соответствия
@@ -41,7 +45,7 @@ function Lesson_07() {
         return "пыльная буря (видимость менее 10 км)";
       }
       case WEATHER_CODES.SS: {
-        return "песчаная буря (видимость менее 10 км) ";
+        return "песчаная буря (видимость менее 10 км)";
       }
       default:
         return "This code doesnt exist";
@@ -52,35 +56,23 @@ function Lesson_07() {
   console.log(weather);
 
   // 13. Generic
-
   type ArrayGenerator<ValueType> = ValueType[];
 
   const someStringsArray: ArrayGenerator<string> = ["a", "b", "c"];
   const someNumberArray: ArrayGenerator<number> = [1, 2, 3, 4, 5];
   const someBooleansArray: ArrayGenerator<boolean> = [true, false, true];
 
-  // Generic with objects
-
   interface AppleType {
     model: string;
     article: number;
   }
-  // Це літеральний тип.
-  //Він каже: змінна може бути тільки "TV" або "PC".
+
   type ItemType = "TV" | "PC";
 
-  //	•	T extends ItemType = ItemType → означає, що type має бути або "TV", або "PC".
-  //	•	extends ItemType → обмеження, щоб T не був довільним рядком.
-  //	•	= ItemType → значення за замовчуванням (якщо не передати другий generic).
   interface ShopItem<ValueType, T extends ItemType = ItemType> {
     type: T;
     value: ValueType;
   }
-
-  //   interface ShopItems<ValueType> {
-  //     type: string;
-  //     value: ValueType;
-  //   }
 
   const item1: ShopItem<number, "TV"> = {
     type: "TV",
@@ -102,49 +94,34 @@ function Lesson_07() {
 
   console.log(item1, item2, item3);
 
-  // interface ShopItems
-  // type: string;
-  // value: ValueType;
-  // }
+  const [count, setCount] = useState<number>(0);
+  console.log(count);
 
-  // const item1: ShopItems = {
-  // type: "TV",
-  // value: 1234567890,
-  // };
+  const onMinus = () => {
+    setCount((prevValue) => prevValue - 1);
+  };
 
-  // const item2: ShopItems = {
-  // type: "PC",
-  // value: "Xiaomi Model 123",
-  // };
+  const onPlus = () => {
+    setCount((prevValue) => prevValue + 1);
+  };
 
-  // const item3: ShopItems = {
-  // type: "PC",
-  // value: {
-  // model: "Apple Pro Book",
-  // articul: 1235425234,
-  // },
-  // };
+  const sendDataToServer = () => {
+    // тут мы должны отправить данные счетчика на сервер
+    console.log(`Sending ${count} to server`);
+  };
 
-  // const [count, setCount] = useState(0);
-
-  // const onMinus = () => {
-  // // Тут пишем логику по уменьшению значения счетчика на 1
-  // setCount((prevValue: number) => {
-  // return prevValue - 1;
-  // });
-  // };
-  // const onPlus = () => {
-  // // Тут пишем логику по увеличению значения счетчика на 1
-  // setCount((prevValue: number) => {
-  // return prevValue + 1;
-  // });
-  // };
-
-  // const sendDataToServer = () => {
-  // // тут мы должны отправить данные счетчика на сервер
-  // console.log(Sending ${count} to server);
-  // };
-
-  return <div className="lesson_07_page_wrapper"></div>;
+  return (
+    <div className="lesson_07_page_wrapper">
+      <Button name="SEND" onClick={sendDataToServer} />
+      <Input
+        id="test-id"
+        name="test"
+        label="test label"
+        placeholder="Test Placeholder"
+      />
+      <Counter onMinus={onMinus} onPlus={onPlus} count={count} />
+    </div>
+  );
 }
+
 export default Lesson_07;
