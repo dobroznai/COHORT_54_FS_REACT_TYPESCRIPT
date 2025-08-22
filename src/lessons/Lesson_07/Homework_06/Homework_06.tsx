@@ -1,16 +1,17 @@
 import { type ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { type Car } from "./types";
+import { CAR_BRAND } from "./types";
 
 import "./styles.css";
 
 function Homework_06() {
   const cars: Car[] = [
-    { brand: "BMW", price: 20000, isDiesel: true },
-    { brand: "Mercedes", price: 22000, isDiesel: false },
-    { brand: "Porshe", price: 50000, isDiesel: true },
-    { brand: "Nissan", price: 25000, isDiesel: false },
-    { brand: "Audi", price: 50000, isDiesel: true },
+    { brand: CAR_BRAND.BMW, price: 20000, isDiesel: true },
+    { brand: CAR_BRAND.Mercedes, price: 22000, isDiesel: false },
+    { brand: CAR_BRAND.Porshe, price: 50000, isDiesel: true },
+    { brand: CAR_BRAND.Nissan, price: 25000, isDiesel: false },
+    { brand: CAR_BRAND.Audi, price: 50000, isDiesel: true },
   ];
 
   const carList: ReactNode = cars.map((car: Car) => (
