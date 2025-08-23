@@ -97,15 +97,15 @@ function Lesson_07() {
   const [count, setCount] = useState<number>(0);
   console.log(count);
 
-  const onMinus = () => {
-    setCount((prevValue) => prevValue - 1);
+  const onMinus = (): void => {
+    setCount((prevValue: number): number => prevValue - 1);
   };
 
   const onPlus = () => {
-    setCount((prevValue) => prevValue + 1);
+    setCount((prevValue: number): number => prevValue + 1);
   };
 
-  const sendDataToServer = () => {
+  const sendDataToServer = (): void => {
     // тут мы должны отправить данные счетчика на сервер
     console.log(`Sending ${count} to server`);
   };
