@@ -7,3 +7,9 @@ export const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const Paragraph = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+`;

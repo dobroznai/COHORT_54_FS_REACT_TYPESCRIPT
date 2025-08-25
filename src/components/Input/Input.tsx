@@ -1,20 +1,12 @@
-import "./styles.css";
+import { Input_wrapper, Input_label, Input_field } from "./styles";
 import { type InputProps } from "./types";
 
 function Input({ id, name, type = "text", placeholder, label }: InputProps) {
   return (
-    <div className="input_wrapper">
-      <label className="input_label" htmlFor={id}>
-        {label}
-      </label>
-      <input
-        className="input_field"
-        id={id}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-      />
-    </div>
+    <Input_wrapper>
+      <Input_label htmlFor={id}>{label}</Input_label>
+      <Input_field id={id} type={type} name={name} placeholder={placeholder} />
+    </Input_wrapper>
   );
 }
 

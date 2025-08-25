@@ -1,9 +1,9 @@
-import { PageWrapper } from "./styles";
+import { PageWrapper, Paragraph } from "./styles";
 
 function Lesson_08() {
   return (
     <PageWrapper>
-      <p>Lesson_08</p>
+      <Paragraph>Lesson_08</Paragraph>
     </PageWrapper>
   );
 }

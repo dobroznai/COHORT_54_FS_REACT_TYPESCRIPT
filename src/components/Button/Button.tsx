@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Button_component } from "./styles";
 import { type ButtonProps } from "./types";
 
 function Button({
@@ -8,12 +8,12 @@ function Button({
   children,
 }: ButtonProps) {
   return (
-    <button className="button_component" onClick={onClick} type={type}>
+    <Button_component onClick={onClick} type={type}>
       {/* {children ? "" : buttonName} */}
       {/* Условный рендеринг*/}
       {!children && name}
       {children}
-    </button>
+    </Button_component>
   );
 }
 

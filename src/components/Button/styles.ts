@@ -1,4 +1,6 @@
-.button_component {
+import styled from "@emotion/styled";
+
+export const Button_component = styled.button`
     display; flex;
     align-items: center;
     justify-content: center;
@@ -13,4 +15,4 @@
     font-size: 16px;
     /* font-weight: bold; */
     cursor: pointer;
-}
+`;
