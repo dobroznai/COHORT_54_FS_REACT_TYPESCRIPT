@@ -23,8 +23,13 @@ function Homework_07() {
     setDislike((prevValue: number): number => prevValue + 1);
   };
 
+  const isRow = true;
+
   return (
-    <div className="homework_07_page_wrapper">
+    <div
+      // style={{ display: "flex", flexDirection: isRow ? "row" : "column" }}
+      className="homework_07_page_wrapper"
+    >
       <Feedback
         onLike={onLike}
         onDislike={onDislike}
