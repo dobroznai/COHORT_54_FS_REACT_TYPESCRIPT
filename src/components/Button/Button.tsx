@@ -6,9 +6,16 @@ function Button({
   name,
   onClick = () => {},
   children,
+  isRed = false,
+  disabled = false,
 }: ButtonProps) {
   return (
-    <Button_component onClick={onClick} type={type}>
+    <Button_component
+      disabled={disabled}
+      $isRed={isRed}
+      onClick={onClick}
+      type={type}
+    >
       {/* {children ? "" : buttonName} */}
       {/* Условный рендеринг*/}
       {!children && name}

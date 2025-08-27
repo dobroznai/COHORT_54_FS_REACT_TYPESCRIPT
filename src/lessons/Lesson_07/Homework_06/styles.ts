@@ -38,14 +38,12 @@ export const Card_wrapper = styled.div`
 
   gap: 15px;
   cursor: pointer;
-`;
 
-export const Card_wrapper: hover = styled.div`
-  background: linear-gradient(45deg, #d8b5ff, #1eae98);
-  /* width: 310px;
-  min-height: 310px; */
-  font-size: 25px;
-  color: white;
+  &:hover {
+    background: linear-gradient(45deg, #d8b5ff, #1eae98);
+    font-size: 25px;
+    color: white;
+  }
 `;
 
 export const Car_info_brand = styled.p`
