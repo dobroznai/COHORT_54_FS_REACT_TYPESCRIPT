@@ -4,7 +4,13 @@ import { type Car } from "./types";
 import { CAR_BRAND } from "./types";
 import { FUEL_TYPE } from "./types";
 
-import "./styles.css";
+import {
+  Homework_06_page_wrapper,
+  Card_wrapper,
+  Car_info_brand,
+  Car_info_price,
+  Car_info_isDiesel,
+} from "./styles";
 
 function Homework_06() {
   const cars: Car[] = [
@@ -16,16 +22,16 @@ function Homework_06() {
   ];
 
   const carList: ReactNode = cars.map((car: Car) => (
-    <div key={uuidv4()} className="card_wrapper">
-      <p className="car_info_brand">Brand: {car.brand} </p>
-      <p className="car_info_price">Price: {car.price} $ </p>
-      <p className="car_info_isDiesel">
+    <Card_wrapper key={uuidv4()}>
+      <Car_info_brand>Brand: {car.brand} </Car_info_brand>
+      <Car_info_price>Price: {car.price} $ </Car_info_price>
+      <Car_info_isDiesel>
         {/* {car.isDiesel ? FUEL_TYPE.DIESEL : FUEL_TYPE.BENZIN} */}
         {car.fuel}
-      </p>
-    </div>
+      </Car_info_isDiesel>
+    </Card_wrapper>
   ));
 
-  return <div className="homework_06_page_wrapper">{carList}</div>;
+  return <Homework_06_page_wrapper>{carList}</Homework_06_page_wrapper>;
 }
 export default Homework_06;

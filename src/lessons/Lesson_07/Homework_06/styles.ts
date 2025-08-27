@@ -1,4 +1,6 @@
-.homework_06_page_wrapper {
+import styled from "@emotion/styled";
+
+export const Homework_06_page_wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -8,9 +10,9 @@
   flex: 1;
   flex-wrap: wrap;
   gap: 80px;
-}
+`;
 
-.card_wrapper {
+export const Card_wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -36,16 +38,23 @@
 
   gap: 15px;
   cursor: pointer;
-}
-.card_wrapper:hover {
-  background: linear-gradient(45deg, #d8b5ff, #1eae98);
-  /* width: 310px;
-  min-height: 310px; */
-  font-size: 25px;
-  color: white;
-}
 
-.car_info_brand {
+  &:hover {
+    background: linear-gradient(45deg, #d8b5ff, #1eae98);
+    font-size: 25px;
+    color: white;
+  }
+`;
+
+export const Car_info_brand = styled.p`
   font-size: 24px;
   color: rgb(49, 49, 49);
-}
+`;
+
+export const Car_info_price = styled.p`
+  font-size: 20px;
+`;
+
+export const Car_info_isDiesel = styled.p`
+  font-size: 20px;
+`;

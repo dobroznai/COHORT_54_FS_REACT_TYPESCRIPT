@@ -1,4 +1,6 @@
-.homework_07_page_wrapper {
+import styled from "@emotion/styled";
+
+export const Homework_07_page_wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -6,4 +8,4 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-}
+`;

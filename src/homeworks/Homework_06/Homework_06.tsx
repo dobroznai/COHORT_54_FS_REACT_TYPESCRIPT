@@ -1,4 +1,13 @@
-import "./styles.css";
+import {
+  Homework_06_page_wrapper,
+  List_wrapper,
+  List_title,
+  Cars_list,
+  Car_card,
+  Car_brand,
+  Car_price,
+  Car_fuel,
+} from "./styles";
 import { v4 } from "uuid";
 
 function Homework_06() {
@@ -17,20 +26,20 @@ function Homework_06() {
   ];
 
   const carList = cars.map((carItem) => (
-    <div key={v4()} className="car_card">
-      <h2 className="car_brand">{carItem.brand}</h2>
-      <p className="car_price">Price: ${carItem.price}</p>
-      <p className="car_fuel">Diesel: {carItem.isDiesel ? "Yes" : "No"}</p>
-    </div>
+    <Car_card key={v4()}>
+      <Car_brand>{carItem.brand}</Car_brand>
+      <Car_price>Price: ${carItem.price}</Car_price>
+      <Car_fuel>Diesel: {carItem.isDiesel ? "Yes" : "No"}</Car_fuel>
+    </Car_card>
   ));
 
   return (
-    <div className="homework_06_page_wrapper">
-      <div className="list_wrapper">
-        <h1 className="list_title">Cars:</h1>
-        <div className="cars_list">{carList}</div>
-      </div>
-    </div>
+    <Homework_06_page_wrapper>
+      <List_wrapper>
+        <List_title>Cars:</List_title>
+        <Cars_list>{carList}</Cars_list>
+      </List_wrapper>
+    </Homework_06_page_wrapper>
   );
 }
 

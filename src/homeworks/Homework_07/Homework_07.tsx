@@ -1,6 +1,7 @@
 import "./styles.css";
 import Feedback from "components/Feedback/Feedback";
 import { useState } from "react";
+import { Homework_07_page_wrapper } from "./styles";
 // import { type ReactNode } from "react";
 
 function Homework_07() {
@@ -23,8 +24,12 @@ function Homework_07() {
     setDislike((prevValue: number): number => prevValue + 1);
   };
 
+  const isRow = true;
+
   return (
-    <div className="homework_07_page_wrapper">
+    <Homework_07_page_wrapper
+    // style={{ display: "flex", flexDirection: isRow ? "row" : "column" }}
+    >
       <Feedback
         onLike={onLike}
         onDislike={onDislike}
@@ -32,7 +37,7 @@ function Homework_07() {
         like={like}
         dislike={dislike}
       />
-    </div>
+    </Homework_07_page_wrapper>
   );
 }
 
