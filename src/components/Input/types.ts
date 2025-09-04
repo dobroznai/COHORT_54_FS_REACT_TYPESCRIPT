@@ -6,6 +6,6 @@ export interface InputProps {
   error?: string | undefined;
   id: string;
   name: string;
-  placeholder?: string;
-  label?: string;
+  placeholder: string;
+  label: string;
 }
