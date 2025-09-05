@@ -1,4 +1,12 @@
-export type InputType = "text" | "password" | "email" | "number" | "search";
+export type InputType =
+  | "string"
+  | "text"
+  | "password"
+  | "email"
+  | "number"
+  | "search";
+
+import { type ChangeEvent } from "react";
 
 export interface InputProps {
   type?: InputType;
@@ -8,4 +16,6 @@ export interface InputProps {
   name: string;
   placeholder: string;
   label: string;
+  value?: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }

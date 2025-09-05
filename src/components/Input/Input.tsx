@@ -9,6 +9,8 @@ function Input({
   type,
   placeholder,
   label,
+  value,
+  onChange,
 }: InputProps) {
   return (
     <InputWrapper>
@@ -20,6 +22,8 @@ function Input({
         type={type}
         name={name}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
       {!!error && <ErrorText>{error}</ErrorText>}
     </InputWrapper>
