@@ -18,7 +18,7 @@ export const Card = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   width: 600px;
   min-height: 400px;
   padding: 30px;
