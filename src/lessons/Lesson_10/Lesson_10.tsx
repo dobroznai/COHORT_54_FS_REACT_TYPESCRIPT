@@ -12,7 +12,7 @@ import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 
 function Lesson_10() {
@@ -29,7 +29,7 @@ function Lesson_10() {
       const response = await axios.get(
         `${UNIVERSITIES_URL}?country=${country}`
       );
-      console.log(response.data);
+      //   console.log(response.data);
       const data = response.data;
 
       setUniversities(data.slice(0, 15));
@@ -40,6 +40,28 @@ function Lesson_10() {
       setIsDisabled(false);
     }
   };
+
+  // MOUNTING
+  useEffect(() => {
+    if (country) {
+      getUniversitiesInformation();
+    }
+  }, []);
+
+  // UPDATING
+  useEffect(() => {
+    if (isDisabled) {
+      getUniversitiesInformation();
+      setIsDisabled(false);
+    }
+  }, [isDisabled]);
+
+  //UNMOUNTING
+  useEffect(() => {
+    return () => {
+      console.log("UNMOUTING");
+    };
+  }, []);
 
   return (
     <PageWrapper>
@@ -57,7 +79,9 @@ function Lesson_10() {
         <Button
           disabled={isDisabled}
           name="Get Universities"
-          onClick={getUniversitiesInformation}
+          onClick={() => {
+            setIsDisabled(true);
+          }}
         />
       </ButtonControl>
       {!!error && <ErrorText>{error}</ErrorText>}
