@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import universityImg from "assets/university.jpg";
-import Button from "components/Button/Button";
-import test from "node:test";
 
 export const PageWrapper = styled.div`
   height: 100%;
@@ -12,7 +10,9 @@ export const PageWrapper = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 15px;
+  padding: 40px 0 40px 0;
 `;
 
 export const Card = styled.div`
@@ -21,16 +21,17 @@ export const Card = styled.div`
   padding: 20px;
   margin: 20px;
   width: 350px;
-  height: 150px;
+  height: 100px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 15px;
 `;
 
 export const Text = styled.p`
-  display: flex;
   font-size: 16px;
   gap: 15px;
+  align-self: center;
 `;
 
 export const ButtonControl = styled.div`
@@ -48,11 +49,16 @@ export const ErrorText = styled(Text)`
   font-weight: bold;
 `;
 
+export const TextUniversityName = styled(Text)`
+  color: rgba(19, 125, 255, 0.95);
+  font-weight: bold;
+`;
+
 export const CardWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 `;

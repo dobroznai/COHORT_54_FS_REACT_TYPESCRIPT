@@ -6,10 +6,12 @@ import {
   InputControl,
   ErrorText,
   CardWrapper,
+  TextUniversityName,
 } from "./styles";
 import { UNIVERSITIES_URL, ERROR_MESSAGE } from "./data";
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
+import { type University } from "./types";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -17,7 +19,7 @@ import { v4 } from "uuid";
 
 function Lesson_10() {
   const [country, setCountry] = useState<string>("");
-  const [universities, setUniversities] = useState<any[]>([]);
+  const [universities, setUniversities] = useState<University[]>([]);
   const [error, setError] = useState<string | undefined>(undefined);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
@@ -27,10 +29,12 @@ function Lesson_10() {
     setError(undefined);
     try {
       const response = await axios.get(
-        `${UNIVERSITIES_URL}?country=${country}`
+        `${UNIVERSITIES_URL}?country=${country.trim()}`
       );
-      //   console.log(response.data);
       const data = response.data;
+      if (data.length === 0) {
+        setError("No universities found matching your request");
+      }
 
       setUniversities(data.slice(0, 15));
     } catch (error: any) {
@@ -40,7 +44,6 @@ function Lesson_10() {
       setIsDisabled(false);
     }
   };
-
   // MOUNTING
   useEffect(() => {
     if (country) {
@@ -48,27 +51,19 @@ function Lesson_10() {
     }
   }, []);
 
-  // UPDATING
-  useEffect(() => {
-    if (isDisabled) {
-      getUniversitiesInformation();
-      setIsDisabled(false);
-    }
-  }, [isDisabled]);
-
   //UNMOUNTING
   useEffect(() => {
-    return () => {
-      console.log("UNMOUTING");
-    };
+    return () => {};
   }, []);
 
   return (
     <PageWrapper>
+      {!!error && <ErrorText>{error}</ErrorText>}
       <InputControl>
         <Input
           id="university"
           name="universityCountry"
+          type="text"
           placeholder="Enter Country for searching uneversities"
           label="Country"
           value={country}
@@ -79,18 +74,27 @@ function Lesson_10() {
         <Button
           disabled={isDisabled}
           name="Get Universities"
-          onClick={() => {
-            setIsDisabled(true);
+          onClick={async () => {
+            if (!country.trim()) {
+              setError("Please enter a country");
+              return;
+            }
+            await getUniversitiesInformation();
           }}
         />
       </ButtonControl>
-      {!!error && <ErrorText>{error}</ErrorText>}
+
       <CardWrapper>
-        {universities.map((uni) => (
+        {universities.map((uni: University) => (
           <Card key={v4()}>
-            <Text>{uni.name}</Text>
-            <Text>{uni.country}</Text>
-            <Text>{uni.web_pages}</Text>
+            <TextUniversityName>{uni.name}</TextUniversityName>
+            {uni.web_pages.map((url, index) => (
+              <Text key={index}>
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {url}
+                </a>
+              </Text>
+            ))}
           </Card>
         ))}
       </CardWrapper>
