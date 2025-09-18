@@ -3,16 +3,17 @@ import Button from "components/Button/Button";
 import { ContactUsFormWrapper, Title, InputContainer } from "./styles";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { CONTACT_US_FORM_VALUES } from "./types";
+import { CONTACT_US_FORM_VALUES, type ContactUsFormValues } from "./types";
 
 function ContactUs() {
-  const vakidationSchema = Yup.object().shape({
+  const validationSchema = Yup.object().shape({
     [CONTACT_US_FORM_VALUES.FULL_NAME]: Yup.string()
       .required("Full name is required")
       .min(3, "Full name field should contain minimum 3 characters")
       .max(50, "Full name field should contain maximum 50 characters"),
     [CONTACT_US_FORM_VALUES.PHONE]: Yup.string()
       .required("Phone name is required")
+      .matches(/^\+?[0-9\s-]+$/, "Enter a valid phone number") // Добавил валидацию через matches мобильного номера
       .min(4, "Phone field should contain minimum 4 characters")
       .max(20, "Phone field should contain maximum 20 characters"),
     [CONTACT_US_FORM_VALUES.EMAIL]: Yup.string()
@@ -22,15 +23,16 @@ function ContactUs() {
       .max(60, "Email field should contain maximum 60 characters"),
   });
 
-  const formik = useFormik({
+  // добавил типизацию через type ContactUsFormValues
+  const formik = useFormik<ContactUsFormValues>({
     initialValues: {
       [CONTACT_US_FORM_VALUES.FULL_NAME]: "",
       [CONTACT_US_FORM_VALUES.PHONE]: "",
       [CONTACT_US_FORM_VALUES.EMAIL]: "",
     },
-    validationSchema: vakidationSchema,
+    validationSchema: validationSchema,
 
-    onSubmit: (values, helpers) => {
+    onSubmit: (values: ContactUsFormValues, helpers) => {
       console.log(values);
       console.log(helpers);
       console.log("Submit from formik works!!!");
@@ -53,7 +55,7 @@ function ContactUs() {
         <Input
           id="phone"
           name={CONTACT_US_FORM_VALUES.PHONE}
-          type="number"
+          type="text"
           placeholder="Your phone number"
           label="Phone"
           value={formik.values[CONTACT_US_FORM_VALUES.PHONE]}
