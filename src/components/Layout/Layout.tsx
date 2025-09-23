@@ -34,7 +34,7 @@ function Layout({ children }: LayoutProps) {
         <NavigationContainer>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/"
@@ -43,7 +43,7 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/contactUs"
@@ -52,7 +52,7 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/about"
@@ -61,41 +61,21 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/login"
           >
             Login
           </HeaderLink>
-
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
-            to="/dhl"
+            to="/clients"
           >
-            DHL
-          </HeaderLink>
-
-          <HeaderLink
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/amazon"
-          >
-            Amazon
-          </HeaderLink>
-          <HeaderLink
-            style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-            to="/ups"
-          >
-            UPS
+            Clients
           </HeaderLink>
         </NavigationContainer>
       </Header>

@@ -76,8 +76,7 @@ export const FooterNavigation = styled.nav`
 
 export const FooterLink = styled(Link)`
   color: white;
-  font-size: 14px;
-  /* font-weight: bold; */
+
   font-size: 20px;
 `;
 
