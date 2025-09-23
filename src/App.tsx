@@ -10,6 +10,9 @@ import Home from "pages/EmployeeApp/Home/Home";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 import About from "pages/EmployeeApp/About/About";
 import LogIn from "pages/EmployeeApp/LogIn/LogIn";
+import DHL from "pages/Clients/DHL/DHL";
+import Amazon from "pages/Clients/Amazon/Amazon";
+import UPS from "pages/Clients/UPS/UPS";
 
 //Lessons
 // import Lesson_06 from "lessons/Lesson_06/Lesson_06";
@@ -37,8 +40,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/login" element={<LogIn />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/dhl" element={<DHL />} />
+          <Route path="/amazon" element={<Amazon />} />
+          <Route path="/ups" element={<UPS />} />
           <Route path="*" element="Page not found" />
         </Routes>
       </Layout>

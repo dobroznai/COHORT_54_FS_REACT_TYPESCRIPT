@@ -27,7 +27,7 @@ function Layout({ children }: LayoutProps) {
       <Header>
         <Logo onClick={goToHomepage}>
           <LogoImg
-            src="https://www.citypng.com/public/uploads/preview/hd-vector-dota-2-3d-official-logo-png-701751694788273ytflyncpns.png"
+            src="https://www.ttspl.in/wp-content/uploads/2025/02/logistics-in-india-1080x675.jpg"
             alt="logo"
           />
         </Logo>
@@ -68,13 +68,42 @@ function Layout({ children }: LayoutProps) {
           >
             Login
           </HeaderLink>
+
+          <HeaderLink
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bolt" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/dhl"
+          >
+            DHL
+          </HeaderLink>
+
+          <HeaderLink
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bolt" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/amazon"
+          >
+            Amazon
+          </HeaderLink>
+          <HeaderLink
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bolt" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/ups"
+          >
+            UPS
+          </HeaderLink>
         </NavigationContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
         <FooterLogo>
           <LogoImg
-            src="https://www.citypng.com/public/uploads/preview/hd-vector-dota-2-3d-official-logo-png-701751694788273ytflyncpns.png"
+            src="https://www.ttspl.in/wp-content/uploads/2025/02/logistics-in-india-1080x675.jpg"
             alt="logo"
           />
         </FooterLogo>
@@ -83,6 +112,7 @@ function Layout({ children }: LayoutProps) {
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Login</FooterLink>
+          <FooterLink to="/clients">Clients</FooterLink>
         </FooterNavigation>
       </Footer>
     </LayoutWrapper>

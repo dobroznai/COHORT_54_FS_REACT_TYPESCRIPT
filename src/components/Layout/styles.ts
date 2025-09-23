@@ -26,10 +26,9 @@ export const Main = styled.main`
 `;
 
 export const Logo = styled.div`
-  padding: 10px;
   height: 100%;
-  width: 70px;
-  background-color: white;
+  width: 80px;
+
   cursor: pointer;
 `;
 
@@ -56,7 +55,7 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 150px;
+  height: fit-content;
   border-top: 1px solid black;
   background-color: rgb(0, 10, 66, 0.9);
   padding: 20px 40px;
@@ -64,10 +63,8 @@ export const Footer = styled.footer`
 `;
 
 export const FooterLogo = styled.div`
-  height: 70px;
-  width: 70px;
-  padding: 10px;
-  background-color: white;
+  height: 80px;
+  width: 80px;
   cursor: pointer;
 `;
 
