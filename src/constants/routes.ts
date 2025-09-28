@@ -23,9 +23,9 @@ export const ROUTES: ROUTES_DATA = {
 };
 
 export enum NAVIGATION_MENU_ROUTES {
-  HOME = "/",
-  CONTACT_US = "/contactUs",
-  ABOUT = "/about",
-  LOGIN = "/login",
-  CLIENTS = "/clients",
+  Home = "/",
+  "Contact Us" = "/contactUs",
+  About = "/about",
+  Login = "/login",
+  Clients = "/clients",
 }

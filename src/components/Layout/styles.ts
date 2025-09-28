@@ -88,3 +88,8 @@ export const PageNotFound = styled.div`
   font-weight: bold;
   font-size: 40px;
 `;
+
+export const navLinkProps = (isActive: boolean) => ({
+  fontWeight: isActive ? "bold" : "normal",
+  textDecoration: isActive ? "underline" : "none",
+});
