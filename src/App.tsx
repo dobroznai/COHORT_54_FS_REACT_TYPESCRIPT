@@ -1,19 +1,20 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import {  Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 
 //Pages
-import Home from "pages/EmployeeApp/Home/Home";
-import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
-import About from "pages/EmployeeApp/About/About";
-import LogIn from "pages/EmployeeApp/LogIn/LogIn";
-import DHL from "pages/Clients/DHL/DHL";
-import Amazon from "pages/Clients/Amazon/Amazon";
-import UPS from "pages/Clients/UPS/UPS";
-import Clients from "pages/Clients/Clients";
-import { ROUTES } from "constants/routes";
+// import Home from "pages/EmployeeApp/Home/Home";
+// import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
+// import About from "pages/EmployeeApp/About/About";
+// import LogIn from "pages/EmployeeApp/LogIn/LogIn";
+// import DHL from "pages/Clients/DHL/DHL";
+// import Amazon from "pages/Clients/Amazon/Amazon";
+// import UPS from "pages/Clients/UPS/UPS";
+// import Clients from "pages/Clients/Clients";
+// import { ROUTES } from "constants/routes";
 
 //Components
-import Layout from "components/Layout/Layout";
+// import Layout from "components/Layout/Layout";
 
 //Lessons
 // import Lesson_06 from "lessons/Lesson_06/Lesson_06";
@@ -22,6 +23,7 @@ import Layout from "components/Layout/Layout";
 // import Lesson_09 from "lessons/Lesson_09/Lesson_09";
 // import Lesson_10 from "lessons/Lesson_10/Lesson_10";
 // import Lesson_11 from "lessons/Lesson_11/Lesson_11";
+import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 
 //Homeworks
 // import Homework_06 from "homeworks/Homework_06/Homework_06";
@@ -37,7 +39,7 @@ function App() {
     <BrowserRouter>
       <GlobalStyles />
 
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
@@ -49,7 +51,7 @@ function App() {
           <Route path={ROUTES.CLIENTS} element={<Clients />} />
           <Route path={ROUTES.NOT_FOUND} element="Page not found" />
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* // lessons */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
@@ -57,6 +59,7 @@ function App() {
       {/* <Lesson_09 /> */}
       {/* <Lesson_10 /> */}
       {/* <Lesson_11 /> */}
+      <Lesson_13 />
       {/* // homeworks */}
       {/* <Homework_06 /> */}
       {/* <Homework_06 /> */}
