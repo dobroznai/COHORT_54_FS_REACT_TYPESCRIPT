@@ -2,10 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 
 //Pages
-// import Home from "pages/EmployeeApp/Home/Home";
-
-//Components
-import Layout from "components/Layout/Layout";
 import Home from "pages/EmployeeApp/Home/Home";
 import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs";
 import About from "pages/EmployeeApp/About/About";
@@ -14,6 +10,10 @@ import DHL from "pages/Clients/DHL/DHL";
 import Amazon from "pages/Clients/Amazon/Amazon";
 import UPS from "pages/Clients/UPS/UPS";
 import Clients from "pages/Clients/Clients";
+import { ROUTES } from "constants/routes";
+
+//Components
+import Layout from "components/Layout/Layout";
 
 //Lessons
 // import Lesson_06 from "lessons/Lesson_06/Lesson_06";
@@ -39,15 +39,15 @@ function App() {
 
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/clients/dhl" element={<DHL />} />
-          <Route path="/clients/amazon" element={<Amazon />} />
-          <Route path="/clients/ups" element={<UPS />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="*" element="Page not found" />
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.CONTACT_US} element={<ContactUs />} />
+          <Route path={ROUTES.ABOUT} element={<About />} />
+          <Route path={ROUTES.LOGIN} element={<LogIn />} />
+          <Route path={ROUTES.DHL} element={<DHL />} />
+          <Route path={ROUTES.AMAZON} element={<Amazon />} />
+          <Route path={ROUTES.UPS} element={<UPS />} />
+          <Route path={ROUTES.CLIENTS} element={<Clients />} />
+          <Route path={ROUTES.NOT_FOUND} element="Page not found" />
         </Routes>
       </Layout>
       {/* // lessons */}

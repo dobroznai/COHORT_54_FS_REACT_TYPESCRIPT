@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       assets: path.resolve(__dirname, "src/assets"),
+      constants: path.resolve(__dirname, "src/constants"),
       components: path.resolve(__dirname, "src/components"),
       consultations: path.resolve(__dirname, "src/consultations"),
       homeworks: path.resolve(__dirname, "src/homeworks"),
