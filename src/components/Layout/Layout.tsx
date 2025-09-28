@@ -27,14 +27,14 @@ function Layout({ children }: LayoutProps) {
       <Header>
         <Logo onClick={goToHomepage}>
           <LogoImg
-            src="https://www.citypng.com/public/uploads/preview/hd-vector-dota-2-3d-official-logo-png-701751694788273ytflyncpns.png"
+            src="https://www.ttspl.in/wp-content/uploads/2025/02/logistics-in-india-1080x675.jpg"
             alt="logo"
           />
         </Logo>
         <NavigationContainer>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/"
@@ -43,7 +43,7 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/contactUs"
@@ -52,7 +52,7 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/about"
@@ -61,12 +61,21 @@ function Layout({ children }: LayoutProps) {
           </HeaderLink>
           <HeaderLink
             style={({ isActive }) => ({
-              fontWeight: isActive ? "bolt" : "normal",
+              fontWeight: isActive ? "bold" : "normal",
               textDecoration: isActive ? "underline" : "none",
             })}
             to="/login"
           >
             Login
+          </HeaderLink>
+          <HeaderLink
+            style={({ isActive }) => ({
+              fontWeight: isActive ? "bold" : "normal",
+              textDecoration: isActive ? "underline" : "none",
+            })}
+            to="/clients"
+          >
+            Clients
           </HeaderLink>
         </NavigationContainer>
       </Header>
@@ -74,7 +83,7 @@ function Layout({ children }: LayoutProps) {
       <Footer>
         <FooterLogo>
           <LogoImg
-            src="https://www.citypng.com/public/uploads/preview/hd-vector-dota-2-3d-official-logo-png-701751694788273ytflyncpns.png"
+            src="https://www.ttspl.in/wp-content/uploads/2025/02/logistics-in-india-1080x675.jpg"
             alt="logo"
           />
         </FooterLogo>
@@ -83,6 +92,7 @@ function Layout({ children }: LayoutProps) {
           <FooterLink to="/contactUs">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Login</FooterLink>
+          <FooterLink to="/clients">Clients</FooterLink>
         </FooterNavigation>
       </Footer>
     </LayoutWrapper>
