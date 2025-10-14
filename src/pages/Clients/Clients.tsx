@@ -1,17 +1,28 @@
+import { useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { PageWrapper, Logo, LogoImg } from "./styles";
+import { ROUTES } from "constants/routes";
 
 function Clients() {
   const navigate = useNavigate();
   const goToDHL = () => {
-    navigate("/clients/dhl");
+    navigate(ROUTES.DHL);
   };
   const goToAmazon = () => {
-    navigate("/clients/amazon");
+    navigate(ROUTES.AMAZON);
   };
   const goToUPS = () => {
-    navigate("/clients/ups");
+    navigate(ROUTES.UPS);
   };
+
+  useEffect(() => {
+    // Unmounting
+    return () => {
+      console.log("Unmounting Clients Component");
+    };
+  }, []);
+
   return (
     <PageWrapper>
       <Logo onClick={goToDHL}>
