@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 import { InputComponent } from "components/Input/styles";
 
 export const BlogManagementWrapper = styled.div`
@@ -12,9 +13,18 @@ export const BlogManagementWrapper = styled.div`
 `;
 
 export const CustomInput = styled(InputComponent)`
-  height: 100px;
-  font-size: 20px;
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical; /* ✅ дозволяє лише вертикальне розтягування */
+  overflow: auto; /* ✅ додає прокрутку, якщо текст виходить за межі */
   &:focus {
     border-color: green;
+  }
+
+  &[as="textarea"] {
+    max-width: 100%;
+    resize: vertical;
   }
 `;

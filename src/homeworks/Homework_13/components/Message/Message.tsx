@@ -1,14 +1,15 @@
 import { useContext } from "react";
-import { MainContext } from "homeworks/Homework_13/components/BlogManagement/BlogManagement";
+import { BlogManagementContext } from "homeworks/Homework_13/components/BlogManagement/BlogManagement";
 import { v4 } from "uuid";
-import { MessageWrapper, ContentInfo } from "./styles";
-import Button from "components/Button/Button";
+import { MessageWrapper, ContentInfo, DeleteButtonWrapper } from "./styles";
 
 function Message() {
-  const { posts, setPosts } = useContext(MainContext);
+  const { posts, setPosts } = useContext(BlogManagementContext);
 
   const deletePosts = () => {
-    setPosts([]);
+    if (window.confirm("Are you sure you want to delete all posts?")) {
+      setPosts([]);
+    }
   };
 
   return (
@@ -18,7 +19,11 @@ function Message() {
           <ContentInfo>{post}</ContentInfo>
         </MessageWrapper>
       ))}
-      <Button name="Delete all posts" isRed onClick={deletePosts} />
+      {posts.length > 0 && (
+        <DeleteButtonWrapper $isRed onClick={deletePosts}>
+          Delete all posts
+        </DeleteButtonWrapper>
+      )}
     </>
   );
 }

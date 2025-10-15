@@ -1,46 +1,48 @@
-import { useState, createContext } from "react";
+import { useState, createContext, type ChangeEvent } from "react";
 import { BlogManagementWrapper, CustomInput } from "./styles";
 import Button from "components/Button/Button";
 
 import Card from "homeworks/Homework_13/components/Card/Card";
 import type { PostsContext } from "./types";
 
-export const MainContext = createContext<PostsContext>({
+export const BlogManagementContext = createContext<PostsContext>({
   posts: [],
   setPosts: () => {},
 });
 
 function BlogManagement() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
   const [posts, setPosts] = useState<string[]>([]);
 
-  const getUserData = () => {
+  const onChangeTextAreaMessage = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setText(e.target.value);
+
+  const postMessage = () => {
     if (text.trim() === "") {
       alert("Field is empty");
       return;
     }
 
-    console.log(text);
     setPosts((prev) => [...prev, text]);
 
     setText("");
   };
-  console.log(posts);
+
   return (
-    <MainContext.Provider value={{ posts, setPosts }}>
+    <BlogManagementContext.Provider value={{ posts, setPosts }}>
       <BlogManagementWrapper>
         <CustomInput
-          id="text"
-          name="textarea"
-          type="text"
-          placeholder="Enter text for new post"
+          as="textarea"
+          name="text"
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text for new post"
+          onChange={onChangeTextAreaMessage}
         />
-        <Button name="Запостить" onClick={getUserData} />
+        <Button name="Запостить" onClick={postMessage} />
         <Card />
       </BlogManagementWrapper>
-    </MainContext.Provider>
+    </BlogManagementContext.Provider>
   );
 }
 
