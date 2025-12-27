@@ -8,7 +8,7 @@ interface ROUTES_DATA {
 export const ROUTES: ROUTES_DATA = {
   HOME: "/",
   CREATE_EMPLOYEE: "/createEmployee",
-  EMPLOYEES: "/employee",
+  EMPLOYEES: "/employees",
   NOT_FOUND: "*",
 };
 
