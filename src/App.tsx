@@ -1,4 +1,4 @@
-// import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 
@@ -12,11 +12,13 @@ import GlobalStyles from "styles/GlobalStyles";
 // import UPS from "pages/Clients/UPS/UPS";
 // import Clients from "pages/Clients/Clients";
 // import { ROUTES } from "constants/routes";
-
-//Pages Lesson 14 EmployeeAppProject
+import CreateEmployee from "lessons/Lesson_14_EmployeeAppProject/CreateEmployee/CreateEmployee";
+import Employees from "lessons/Lesson_14_EmployeeAppProject/Employees/Employees";
+import { ROUTES } from "lessons/Lesson_14_EmployeeAppProject/constants/routes";
 
 //Components
 // import Layout from "components/Layout/Layout";
+import Layout from "lessons/Lesson_14_EmployeeAppProject/Layout/Layout";
 
 //Lessons
 // import Lesson_06 from "lessons/Lesson_06/Lesson_06";
@@ -41,7 +43,6 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-
       {/* <Layout>
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
@@ -55,7 +56,15 @@ function App() {
           <Route path={ROUTES.NOT_FOUND} element="Page not found" />
         </Routes>
       </Layout> */}
-      {/* // lessons */}
+      <Layout>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<CreateEmployee />} />
+          <Route path={ROUTES.CREATE_EMPLOYEE} element={<CreateEmployee />} />
+          <Route path={ROUTES.EMPLOYEES} element={<Employees />} />
+          <Route path={ROUTES.NOT_FOUND} element="Page Not Found" />
+        </Routes>
+      </Layout>
+      ;{/* // lessons */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
       {/* <Lesson_08 /> */}

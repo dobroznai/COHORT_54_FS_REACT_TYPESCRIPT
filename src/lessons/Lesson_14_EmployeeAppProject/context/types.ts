@@ -1,6 +1,7 @@
 import type { EmployeeData } from "../CreateEmployee/types";
+import { type Dispatch, type SetStateAction } from "react";
 
 export interface EmployeeContextValue {
-  employeeData: EmployeeData | undefined;
-  setEmployeeData: (data: EmployeeData | undefined) => void;
+  employeeData: EmployeeData[];
+  setEmployeeData: Dispatch<SetStateAction<EmployeeData[]>>;
 }

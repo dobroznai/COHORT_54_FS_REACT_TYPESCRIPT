@@ -1,4 +1,5 @@
 export interface EmployeeData {
+  id: string;
   name: string | undefined;
   surname: string | undefined;
   age: string | undefined;
