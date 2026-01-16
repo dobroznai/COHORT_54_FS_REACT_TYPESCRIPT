@@ -1,4 +1,4 @@
-// import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 
@@ -12,9 +12,13 @@ import GlobalStyles from "styles/GlobalStyles";
 // import UPS from "pages/Clients/UPS/UPS";
 // import Clients from "pages/Clients/Clients";
 // import { ROUTES } from "constants/routes";
+import CreateEmployee from "lessons/Lesson_14_EmployeeAppProject/CreateEmployee/CreateEmployee";
+import Employees from "lessons/Lesson_14_EmployeeAppProject/Employees/Employees";
+import { ROUTES } from "lessons/Lesson_14_EmployeeAppProject/constants/routes";
 
 //Components
 // import Layout from "components/Layout/Layout";
+import Layout from "lessons/Lesson_14_EmployeeAppProject/Layout/Layout";
 
 //Lessons
 // import Lesson_06 from "lessons/Lesson_06/Lesson_06";
@@ -23,7 +27,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Lesson_09 from "lessons/Lesson_09/Lesson_09";
 // import Lesson_10 from "lessons/Lesson_10/Lesson_10";
 // import Lesson_11 from "lessons/Lesson_11/Lesson_11";
-import Lesson_13 from "lessons/Lesson_13/Lesson_13";
+// import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 
 //Homeworks
 // import Homework_06 from "homeworks/Homework_06/Homework_06";
@@ -33,13 +37,12 @@ import Lesson_13 from "lessons/Lesson_13/Lesson_13";
 // import Homework_08_Lesson_09 from "lessons/Lesson_09/Homework_08/Homework_08";
 // import Homework_09 from "homeworks/Homework_09/Homework_09";
 // import Homework_11 from "homeworks/Homework_11/Homework_11";
-import Homework_13 from "homeworks/Homework_13/Homework_13";
+// import Homework_13 from "homeworks/Homework_13/Homework_13";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-
       {/* <Layout>
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
@@ -53,7 +56,15 @@ function App() {
           <Route path={ROUTES.NOT_FOUND} element="Page not found" />
         </Routes>
       </Layout> */}
-      {/* // lessons */}
+      <Layout>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<CreateEmployee />} />
+          <Route path={ROUTES.CREATE_EMPLOYEE} element={<CreateEmployee />} />
+          <Route path={ROUTES.EMPLOYEES} element={<Employees />} />
+          <Route path={ROUTES.NOT_FOUND} element="Page Not Found" />
+        </Routes>
+      </Layout>
+      ;{/* // lessons */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
       {/* <Lesson_08 /> */}
@@ -69,7 +80,7 @@ function App() {
       {/* <Homework_08_Lesson_09 /> */}
       {/* <Homework_09 /> */}
       {/* <Homework_11 /> */}
-      <Homework_13 />
+      {/* <Homework_13 /> */}
     </BrowserRouter>
   );
 }
